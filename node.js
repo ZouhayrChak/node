@@ -37,7 +37,7 @@ async function connectToOracleDB() {
     
 
     // Example query
-    const result = await connection.execute('SELECT sysdate FROM dual');
+    const result = await connection.execute('SELECT * from table');
     console.log('Database Time:', result.rows);
 
     // Close connection
