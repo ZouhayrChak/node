@@ -19,33 +19,3 @@ const server=http.createServer(function(req,res){
 
 
 }).listen(81);
-
-const oracledb = require('oracledb');
-
-async function connectToOracleDB() {
-  try {
-    // Initialize Oracle Client (optional if PATH is set correctly)
-    oracledb.initOracleClient(); // No need for libDir if Oracle 23c is installed
-
-    // Connect to the database
-    const connection = await oracledb.getConnection({
-      user: 'SYSTEM',                     // Your username
-      password: 'admin',          // Your password
-      connectString: 'localhost:1521/FREE', // Adjust if service name is different
-    });
-
-    
-
-    // Example query
-    const result = await connection.execute('SELECT * from table');
-    console.log('Database Time:', result.rows);
-
-    // Close connection
-    await connection.close();
-    console.log('Connection closed successfully.');
-  } catch (err) {
-    console.error('Error connecting to Oracle Database:', err);
-  }
-}
-
-connectToOracleDB();
