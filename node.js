@@ -19,14 +19,3 @@ const server=http.createServer(function(req,res){
 
 
 }).listen(81);
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: ""
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
