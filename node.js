@@ -34,7 +34,7 @@ async function connectToOracleDB() {
       connectString: 'localhost:1521/FREE', // Adjust if service name is different
     });
 
-    console.log('Connected to Oracle database');
+    
 
     // Example query
     const result = await connection.execute('SELECT sysdate FROM dual');
